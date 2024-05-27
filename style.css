@@ -1,0 +1,196 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+ --pink: #f9cdcd;
+ --black: #252422;
+ --white: #f4f4f4;
+}
+
+html {
+    font-family: "Neue Montreal";
+}
+
+body {
+    display: grid;
+    /* align-items: center; */
+    position: relative;
+    background: #f4f4f4;
+    /* background-image: url(https://www.aespa.com/assets/noise-DAvmsmDJ.gif);
+    opacity: .9; */
+}
+
+.intro-transition {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: var(--white);
+    z-index: 100;
+    animation: intro 1.5s forwards;
+    animation-delay: .7s;
+}
+
+@keyframes intro {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.intro-text {
+    font-size: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 50%);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    color: white;
+    z-index: 200;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+    h1 {
+        animation: intro2 1s ease;
+    }
+}
+
+@keyframes intro2 {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 80px;
+    z-index: 1;
+    .logo {
+        fill: white;
+
+        svg {
+            width: 210px;
+            height: 25px;
+
+            path {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    .menu {
+        display: flex; 
+        text-transform: uppercase;
+        
+        
+        
+        ul {
+            display: flex;
+            gap: 4rem;
+            list-style: none;
+            
+            
+            
+            li {
+                font-family: "", sans-serif;
+                font-weight: 550;
+                font-size: 14px;
+                /* padding-inline: 30px; */
+                position: relative;
+                
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+
+        a:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            width: 100%;
+            background: white;
+            
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform .25s cubic-bezier(0.28, 0.44, 0.49, 1);
+        }
+    
+        a:hover:after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+    }
+
+    
+
+    .burger {
+
+        .dot-container {
+            display: flex;
+            gap: .2rem;
+            cursor: pointer;
+
+            .dot {
+                height: 5px;
+                width: 5px;
+                background: white;
+                border-radius: 50%;
+                transition: .2s; 
+            }
+        }   
+
+        .dot-container:hover .dot:nth-child(1) {
+            transform: translateX(-2px);
+        } 
+
+        .dot-container:hover .dot:nth-child(3) {
+            transform: translateX(2px);
+        } 
+    }  
+}
+
+.video-background {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.video-background video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.noise {
+    background-image: url(https://www.aespa.com/assets/noise-DAvmsmDJ.gif);
+    opacity: 1;
+    background: repeat;
+    background-size: contain;
+    opacity: 0.055;
+    height: 100%;
+}
+
+/* ! */ /* ! */ /* ! */ /* ! */ /* ! */
+
+
+
