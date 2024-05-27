@@ -81,7 +81,7 @@ nav {
         fill: white;
 
         svg {
-            width: 160px;
+            width: clamp(137px 8.2vw 160px);
             height: 22px;
 
             path {
